@@ -1,19 +1,28 @@
 package com.numbers;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
-
 public class GcdDemo {
 
 	public static void main(String[] args) {
-		List<Integer> numbers = Arrays.asList(23,62,48,37,8,19,73,64);
+		int a = 3, b = 9;
 		
-		Stream<Integer> numStream = numbers.stream();
+		System.out.println(gcd(a, b));
 		
-		numStream
-		.sorted()
-		.forEach(item -> System.out.println(item));
+	}
+
+	private static int gcd(int i, int j) {
+		
+		if( i == 0)
+			return j;
+		if (j == 0)
+			return i;
+		
+		if(i == j)
+			return i;
+		
+		if(i > j)
+			return gcd(i - j, j);
+		return gcd(i, j-i);
+		
 		
 	}
 
