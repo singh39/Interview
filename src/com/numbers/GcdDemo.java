@@ -21,7 +21,7 @@ public class GcdDemo {
 		
 		if(i > j)
 			return gcd(i - j, j);
-		return gcd(i, j-i);
+		return gcd(i, j - i);
 		
 		
 	}
